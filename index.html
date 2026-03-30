@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="description"
+        content="WinMergeレポートビューアは、WinMergeから出力したHTMLレポートをより快適にレビューするための高機能ツールです。差分ナビゲーション、ミニマップ、固定ヘッダーなどの機能を備えています。">
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Content Security Policy -->
+    <meta content="default-src 'self'; 
+                 style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; 
+                 font-src https://cdnjs.cloudflare.com; 
+                 script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+                 img-src 'self' data:;
+                 connect-src 'self' https://cdnjs.cloudflare.com" http-equiv="Content-Security-Policy" />
+
+    <title>WinMerge Report Viewer</title>
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Font Awesome (SRI付き) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- スタイルシート -->
+    <link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- モバイル警告 -->
+    <div id="mobileWarning" role="alert" aria-live="assertive">
+        <div class="warning-icon" aria-hidden="true">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <p>
+            このツールはスマートフォンには対応していません。<br>PCでご利用ください。
+        </p>
+    </div>
+
+    <!-- 差分位置表示ペイン（左右2ミニマップ） -->
+    <div id="locationPane" role="region" aria-label="差分位置表示ペイン">
+        <div id="locationPaneLeft"
+             role="region"
+             aria-label="旧バージョン ミニマップ"
+             aria-describedby="locationPaneDesc">
+            <div class="minimap-header" aria-hidden="true">旧</div>
+        </div>
+        <div id="locationPaneRight"
+             role="region"
+             aria-label="新バージョン ミニマップ">
+            <div class="minimap-header" aria-hidden="true">新</div>
+        </div>
+        <p id="locationPaneDesc" style="display:none;">
+            左ペインは旧バージョン、右ペインは新バージョンの差分位置を示します。マーカーをクリックするとその差分へジャンプします。
+        </p>
+    </div>
+
+    <!-- メインコンテンツエリア -->
+    <div id="diffContent">
+        <!-- 差分情報表示 -->
+        <div class="info-hidden" id="diffInfo"></div>
+
+        <!-- フローティングボタン群 -->
+        <button class="floating-button button-hidden" id="resetButton">
+            <i aria-hidden="true" class="fas fa-sync-alt icon"></i>更新
+        </button>
+        <button class="floating-button button-hidden" id="scrollTopButton">
+            <i aria-hidden="true" class="fas fa-chevron-up icon"></i>トップへ
+        </button>
+        <button class="floating-button nav-button button-hidden" id="prevDiffButton">
+            <i aria-hidden="true" class="fas fa-chevron-up icon"></i>前の差分
+        </button>
+        <button class="floating-button nav-button button-hidden" id="nextDiffButton">
+            <i aria-hidden="true" class="fas fa-chevron-down icon"></i>次の差分
+        </button>
+
+        <!-- 固定ヘッダー -->
+        <div class="fixed-header fixed-header-hidden" id="fixedHeader">
+            <table>
+                <tr id="fixedHeaderRow"></tr>
+            </table>
+        </div>
+
+        <!-- ツールヘッダー -->
+        <div id="toolHeader">
+            <i class="fas fa-columns"></i>
+            <span>WinMerge Report Viewer</span>
+        </div>
+
+        <!-- 利用ガイドリンク -->
+        <a href="document.html" target="_blank" class="header-link" title="利用ガイドを表示">
+            <i class="fas fa-question-circle"></i>
+        </a>
+
+        <!-- ファイルドロップエリア -->
+        <div id="dropArea">
+            <div class="drop-icon">
+                <i aria-hidden="true" class="fas fa-file-alt"></i>
+            </div>
+            <h3>WinMerge差分レポートをアップロード</h3>
+            <p>HTMファイルをここにドラッグ&ドロップ<br>または下のボタンでファイルを選択<br>※ 最大ファイルサイズ: 10MB</p>
+        </div>
+
+        <!-- ファイル入力 -->
+        <input accept=".htm,.html" id="fileInput" type="file" aria-describedby="fileInputDesc">
+        <label for="fileInput"></label>
+        <p id="fileInputDesc" class="accessibility-hidden">
+            WinMergeで生成されたHTMLレポートを選択してください(最大10MBまで)。
+        </p>
+
+        <!-- ビューアエリア -->
+        <div id="viewer"></div>
+    </div>
+
+    <!-- ========================================
+         JavaScriptモジュール（依存順に読み込み）
+         ======================================== -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
