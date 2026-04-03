@@ -187,16 +187,67 @@
         }
 
         /* WinMerge デフォルトカラースキーム（Default.ini）に準拠した差分色 */
-        .diff-changed  { background-color: rgb(239, 203, 5);   }
-        .diff-word     { background-color: rgb(241, 226, 173); }
-        .diff-del      { background-color: rgb(255, 160, 160); }
-        .diff-moved-from { background-color: rgb(255, 170, 130); }
-        .diff-moved-to   { background-color: rgb(200, 129, 108); }
-        .diff-separator  { background-color: rgb(192, 192, 192); }
+        .diff-changed {
+            background-color: rgb(239, 203, 5);
+        }
 
-        .mr-0_5rem { margin-right: .5rem; }
-        .mr-1rem   { margin-right: 1rem; }
-        .mb-0_5rem { margin-bottom: .5rem; }
+        /* 変更行 */
+        .diff-word {
+            background-color: rgb(241, 226, 173);
+        }
+
+        /* 行内差分 */
+        .diff-del {
+            background-color: rgb(255, 160, 160);
+        }
+
+        /* 削除・追加行 */
+        .diff-moved {
+            background-color: rgb(255, 170, 130);
+        }
+
+        /* 移動元 */
+        .diff-moved-to {
+            background-color: rgb(200, 129, 108);
+        }
+
+        /* 移動先 */
+        .diff-sep {
+            background-color: rgb(192, 192, 192);
+        }
+
+        /* 区切り行 */
+
+        /* ミニマップマーカー色（style.css の CSS 変数に準拠） */
+        .minimap-changed {
+            background-color: #FFD700;
+        }
+
+        /* 変更行・行内差分 */
+        .minimap-del {
+            background-color: #C0C0C0;
+        }
+
+        /* 削除・追加行・区切り */
+        .minimap-moved {
+            background-color: #FFA500;
+        }
+
+        /* 移動元・移動先 */
+
+        /* #c0c0c0 区切り行 */
+        .mr-0_5rem {
+            margin-right: .5rem;
+        }
+
+        .mr-1rem {
+            margin-right: 1rem;
+        }
+
+        /* 操作方法：ミニマップ（ロケーションペイン）リスト */
+        .mb-0_5rem {
+            margin-bottom: .5rem;
+        }
 
         /* トップへ戻るリンク */
         .back-to-top {
@@ -215,10 +266,17 @@
             transition: color 0.2s ease;
         }
 
-        .back-to-top a:hover { color: #004d40; }
-        .back-to-top a i    { margin-right: 4px; }
+        .back-to-top a:hover {
+            color: #004d40;
+        }
 
-        .text-center { text-align: center; }
+        .back-to-top a i {
+            margin-right: 4px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
 
         .feature-grid {
             display: grid;
@@ -240,11 +298,19 @@
             margin-bottom: .5rem;
         }
 
-        .feature-card p  { margin-bottom: 0; }
-        .feature-card i  { color: #4caf50; margin-right: 8px; }
+        .feature-card p {
+            margin-bottom: 0;
+        }
+
+        .feature-card i {
+            color: #4caf50;
+            margin-right: 8px;
+        }
 
         /* アコーディオンスタイル */
-        .accordion { margin: 15px 0; }
+        .accordion {
+            margin: 15px 0;
+        }
 
         .accordion-item {
             border: 1px solid #e0e0e0;
@@ -265,7 +331,9 @@
             transition: background 0.3s ease;
         }
 
-        .accordion-header:hover { background: rgba(0, 121, 107, 0.1); }
+        .accordion-header:hover {
+            background: rgba(0, 121, 107, 0.1);
+        }
 
         #faq .accordion-header span {
             text-indent: -1.7rem;
@@ -279,9 +347,13 @@
             background: white;
         }
 
-        .accordion-content.active { max-height: 1000px; }
+        .accordion-content.active {
+            max-height: 1000px;
+        }
 
-        .accordion-body { padding: 15px; }
+        .accordion-body {
+            padding: 15px;
+        }
 
         #faq .accordion-body {
             text-indent: -1.8rem;
@@ -301,6 +373,7 @@
             margin-right: 8px;
         }
 
+        /* アコーディオン内の回答ボックスにぶら下げインデント適用 */
         .accordion-body .info-box {
             padding-left: calc(12px + 1.2em);
             text-indent: -1.2em;
@@ -325,7 +398,10 @@
             align-items: center;
         }
 
-        .toc-title i { margin-right: 10px; color: #00796b; }
+        .toc-title i {
+            margin-right: 10px;
+            color: #00796b;
+        }
 
         .toc-grid {
             display: grid;
@@ -333,7 +409,10 @@
             gap: 5px 15px;
         }
 
-        .toc-item { display: flex; align-items: center; }
+        .toc-item {
+            display: flex;
+            align-items: center;
+        }
 
         .toc-item a {
             color: #004d40;
@@ -365,52 +444,128 @@
             margin-bottom: 0;
         }
 
-        /* ミニマップ色見本の横並び */
-        .minimap-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 20px;
-            margin: 10px 0;
-        }
-
-        .minimap-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-        }
-
         /* タブレット向け（幅900px以下） */
         @media screen and (max-width: 900px) {
-            body { padding: 15px; font-size: 16px; max-width: 100%; }
-            h1  { font-size: 1.6rem; }
-            h2  { font-size: 1.3rem; }
-            .description { flex-direction: column; align-items: flex-start; gap: 12px 0; }
-            .description a, .description p { width: 100%; margin: 0; }
-            .description a { max-width: 100%; }
-            .link-to-tool  { font-size: 17px; padding: 10px 14px; }
-            th, td         { font-size: 15px; word-break: break-word; }
-            .section-box   { padding: 18px; }
-            .feature-grid  { grid-template-columns: 1fr; }
-            .toc-grid      { grid-template-columns: 1fr; }
-            .toc-container { padding: 15px; }
-            .toc-title     { font-size: 1.1em; margin-bottom: 10px; }
+            body {
+                padding: 15px;
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .description {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px 0;
+            }
+
+            .description a,
+            .description p {
+                width: 100%;
+                margin: 0;
+            }
+
+            .description a {
+                max-width: 100%;
+            }
+
+            .link-to-tool {
+                font-size: 17px;
+                padding: 10px 14px;
+            }
+
+            th,
+            td {
+                font-size: 15px;
+                word-break: break-word;
+            }
+
+            .section-box {
+                padding: 18px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-container {
+                padding: 15px;
+            }
+
+            .toc-title {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
         }
 
         /* スマホ向け（幅600px以下） */
         @media screen and (max-width: 600px) {
-            body { padding: 10px; font-size: 15px; line-height: 1.6; }
-            h1   { font-size: 1.4rem; margin-bottom: 1rem; text-align: left; text-indent: -1.2rem; padding-left: 3rem; }
-            h2   { font-size: 1.2rem; }
-            h3   { font-size: 1rem; }
-            .description { flex-direction: column; }
-            .description a, .description p { width: 100%; }
-            .link-to-tool { font-size: 16px; padding: 10px 12px; }
-            #security-policy>p { text-indent: -3rem; padding-left: 3rem; }
-            table { font-size: 14px; }
-            thead { display: none; }
-            tr    { display: block; margin-bottom: 10px; }
-            td    {
+            body {
+                padding: 10px;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                text-align: left;
+                text-indent: -1.2rem;
+                padding-left: 3rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .description {
+                flex-direction: column;
+            }
+
+            .description a,
+            .description p {
+                width: 100%;
+            }
+
+            .link-to-tool {
+                font-size: 16px;
+                padding: 10px 12px;
+            }
+
+            #security-policy>p {
+                text-indent: -3rem;
+                padding-left: 3rem;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            td {
                 display: flex;
                 justify-content: space-between;
                 padding: 8px;
@@ -418,26 +573,72 @@
                 border-bottom: 1px solid #eee;
                 position: relative;
             }
+
             td:first-child {
                 background-color: #e0f2f1;
                 justify-content: space-around;
                 align-items: center;
             }
+
             #operations td:first-child,
-            #system-requirements td:first-child { color: #004d40; font-weight: bold; }
-            td:last-child { border-right: none; }
-            td:before { content: attr(data-label); font-weight: bold; margin-right: 10px; min-width: fit-content; }
-            td:first-child:before { display: none; }
-            td p { margin-bottom: 0; }
-            #faq .accordion-body { text-indent: -1.6rem; padding-left: calc(1.6rem + 15px); }
-            .section-box { padding: 15px; }
-            .color-box   { vertical-align: -1.1px; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .toc-grid   { grid-template-columns: 1fr; }
-            .toc-item a { font-size: 14px; padding: 5px 8px; }
-            .toc-container { padding: 12px; }
-            .toc-title  { font-size: 1em; margin-bottom: 8px; }
-            .minimap-legend { flex-direction: column; gap: 6px; }
+            #system-requirements td:first-child {
+                color: #004d40;
+                font-weight: bold;
+            }
+
+            td:last-child {
+                border-right: none;
+            }
+
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 10px;
+                min-width: fit-content;
+            }
+
+            td:first-child:before {
+                display: none;
+            }
+
+            td p {
+                margin-bottom: 0;
+            }
+
+            #faq .accordion-body {
+                text-indent: -1.6rem;
+                padding-left: calc(1.6rem + 15px);
+            }
+
+            .section-box {
+                padding: 15px;
+            }
+
+            .color-box {
+                vertical-align: -1.1px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-item a {
+                font-size: 14px;
+                padding: 5px 8px;
+            }
+
+            .toc-container {
+                padding: 12px;
+            }
+
+            .toc-title {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
         }
     </style>
 </head>
@@ -454,7 +655,7 @@
             <p><strong>WinMerge Report Viewerは、WinMergeから出力したHTMLレポートを高速かつ快適にレビューするための専用ツールです。</strong></p>
         </div>
 
-        <!-- 目次 -->
+        <!-- ★ 目次 -->
         <div class="toc-container">
             <h2 class="toc-title">
                 <i class="fas fa-list-ul"></i>
@@ -463,73 +664,75 @@
             <div class="toc-grid">
                 <div class="toc-item">
                     <a href="#security-policy">
-                        <i class="fas fa-shield-alt"></i>セキュリティポリシー
+                        <i class="fas fa-shield-alt"></i>
+                        セキュリティポリシー
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#quick-start">
-                        <i class="fas fa-bolt"></i>利用手順
+                        <i class="fas fa-bolt"></i>
+                        利用手順
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#features">
-                        <i class="fas fa-magic"></i>主な機能
+                        <i class="fas fa-magic"></i>
+                        主な機能
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#operations">
-                        <i class="fas fa-mouse-pointer"></i>操作方法
-                    </a>
-                </div>
-
-                <div class="toc-item">
-                    <a href="#diff-colors">
-                        <i class="fas fa-palette"></i>差分の色について
+                        <i class="fas fa-mouse-pointer"></i>
+                        操作方法
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#keyboard-shortcuts">
-                        <i class="fas fa-keyboard"></i>キーボードショートカット
+                        <i class="fas fa-keyboard"></i>
+                        キーボードショートカット
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#faq">
-                        <i class="fas fa-question-circle"></i>よくある質問（FAQ）
+                        <i class="fas fa-question-circle"></i>
+                        よくある質問（FAQ）
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#troubleshooting">
-                        <i class="fas fa-tools"></i>トラブルシューティング
+                        <i class="fas fa-tools"></i>
+                        トラブルシューティング
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#system-requirements">
-                        <i class="fas fa-mobile-alt"></i>動作環境
+                        <i class="fas fa-mobile-alt"></i>
+                        動作環境
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#accessibility">
-                        <i class="fas fa-universal-access"></i>アクセシビリティ
+                        <i class="fas fa-universal-access"></i>
+                        アクセシビリティ
                     </a>
                 </div>
                 <div class="toc-item">
                     <a href="#technical-specs">
-                        <i class="fas fa-code"></i>技術仕様
+                        <i class="fas fa-code"></i>
+                        技術仕様
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- セキュリティポリシー -->
+        <!-- ★ NEW: セキュリティポリシー -->
         <div class="section-box" id="security-policy">
             <h2><i class="fas fa-shield-alt mr-0_5rem"></i>重要：セキュリティポリシー</h2>
 
             <div class="security-box">
                 <p class="mb-0_5rem"><strong><i class="fas fa-exclamation-circle"></i> 使用可能なファイル</strong></p>
                 <ul>
-                    <li><strong>WinMergeで生成したHTMLレポート（推奨）</strong></li>
-                    <li>社内で作成されたWinMergeレポート</li>
-                    <li>信頼できる同僚から受け取ったレポート</li>
+                    <li><strong>WinMergeで生成したHTMLレポート</strong></li>
                 </ul>
             </div>
 
@@ -546,7 +749,7 @@
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 利用手順 -->
+        <!-- ★ NEW: 利用手順 -->
         <div class="section-box" id="quick-start">
             <h2><i class="fas fa-bolt mr-0_5rem"></i>利用手順</h2>
 
@@ -558,7 +761,8 @@
             </ol>
 
             <h3><span class="step-number">2</span>ビューアを開く</h3>
-            <p><a href="index.html" class="link-to-tool" target="_blank"><i class="fas fa-external-link-alt"></i>ビューアを開く</a>　をクリック</p>
+            <p><a href="index.html" class="link-to-tool" target="_blank"><i
+                        class="fas fa-external-link-alt"></i>ビューアを開く</a>　をクリック</p>
 
             <h3><span class="step-number">3</span>ファイルをアップロード</h3>
             <p>以下のいずれかの方法：</p>
@@ -568,23 +772,19 @@
             </ul>
 
             <h3><span class="step-number">4</span>レビュー開始</h3>
-            <p>自動的に差分が表示されます。<strong>「次の差分」</strong>ボタンまたは <span class="kbd">Ctrl</span> + <span class="kbd arrow">↓</span> で差分を順に確認できます。</p>
+            <p>自動的に差分が表示されます。<strong>「次の差分」</strong>ボタンまたは <span class="kbd">Ctrl</span> + <span
+                    class="kbd arrow">↓</span>
+                で差分を順に確認できます。</p>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 主な機能 -->
         <div class="section-box" id="features">
             <h2><i class="fas fa-magic mr-0_5rem"></i>主な機能</h2>
 
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h4><i class="fas fa-map-marked-alt"></i>左右2ペイン ミニマップ</h4>
-                    <p>画面左端に「旧バージョン（旧）」と「新バージョン（新）」の差分位置を2列で表示。クリックで瞬時に目的の差分へジャンプできます。</p>
-                </div>
-
-                <div class="feature-card">
-                    <h4><i class="fas fa-layer-group"></i>ブロック単位のミニマップ</h4>
-                    <p>連続した同種の差分行を1ブロックとして検出し、ミニマップにまとめて表示します。ブロック数が少ない場合は番号ラベルも表示されます。</p>
+                    <h4><i class="fas fa-map-marked-alt"></i>ミニマップ</h4>
+                    <p>画面左端に全体の差分位置を表示。クリックで瞬時に目的の差分へジャンプできます。</p>
                 </div>
 
                 <div class="feature-card">
@@ -611,40 +811,70 @@
                     <h4><i class="fas fa-sync-alt"></i>リセット機能</h4>
                     <p>ワンクリックで初期状態に戻せます。別のファイルをすぐに確認できます。</p>
                 </div>
-
-                <div class="feature-card">
-                    <h4><i class="fas fa-shield-alt"></i>セキュアな処理</h4>
-                    <p>すべての処理はブラウザ内で完結します。ファイルはサーバーに送信されず、Content Security Policy（CSP）によりXSS攻撃を防止します。</p>
-                </div>
             </div>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 操作方法 -->
         <div class="section-box" id="operations">
             <h2><i class="fas fa-mouse-pointer mr-0_5rem"></i>操作方法</h2>
 
             <h3>ミニマップ（ロケーションペイン）</h3>
             <p>
                 画面左端に表示される縦長のナビゲーションバーです。<br>
-                <strong>左ペイン（旧）</strong>と<strong>右ペイン（新）</strong>の2列構成で、旧ファイル・新ファイルそれぞれの差分位置を表示します。
+                <strong>連続した差分行を1つの「差分ブロック」としてまとめて表示</strong>します。<br>
+                左ペインが旧ファイル（旧）、右ペインが新ファイル（新）の差分位置を示します。
             </p>
+
+            <h4>マーカーの色</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-center">色</th>
+                        <th>差分の種類</th>
+                        <th>左ペイン（旧）</th>
+                        <th>右ペイン（新）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center"><span class="color-box minimap-changed"></span></td>
+                        <td>変更行・行内差分</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="color-box minimap-del"></span></td>
+                        <td>削除・追加行・区切り行</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">❌</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="color-box minimap-moved"></span></td>
+                        <td>移動元</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">❌</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="color-box minimap-moved"></span></td>
+                        <td>移動先</td>
+                        <td class="text-center">❌</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="color-box minimap-del"></span></td>
+                        <td>区切り行</td>
+                        <td class="text-center">✅</td>
+                        <td class="text-center">✅</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <ul>
                 <li class="mb-0_5rem">
-                    <p><strong>マーカーをクリック</strong></p>
-                    該当する差分の位置へジャンプします。左右どちらのペインのマーカーをクリックしても同じ差分へ移動します。
-                </li>
-                <li class="mb-0_5rem">
-                    <p><strong>ビューポートインジケーター</strong></p>
-                    現在の画面表示位置が薄い青色のバーでミニマップ上に表示されます。
+                    <strong>マーカーをクリック</strong><br>
+                    該当する差分ブロックの先頭へジャンプ
                 </li>
             </ul>
-
-            <h3>ブロック単位のマーカー表示</h3>
-            <p>
-                ミニマップは常に<strong>ブロックモード</strong>で動作します。連続した同種の差分行を1ブロックとして検出し、ミニマップにまとめて表示します。
-                ブロック数が20以下の場合、各マーカーに番号ラベルが表示されます。
-            </p>
 
             <h3>フローティングボタン</h3>
             <p>画面右下に表示される操作ボタンです。</p>
@@ -677,73 +907,6 @@
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 差分の色について -->
-        <div class="section-box" id="diff-colors">
-            <h2><i class="fas fa-palette mr-0_5rem"></i>差分の色について</h2>
-            <p>本ツールはWinMergeのデフォルトカラースキーム（Default.ini）に準拠した差分色を使用しています。</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th class="text-center">色</th>
-                        <th>差分の種類</th>
-                        <th>説明</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-changed"></span>
-                        </td>
-                        <td data-label="差分の種類">変更行</td>
-                        <td data-label="説明">行の内容が変更されています。</td>
-                    </tr>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-word"></span>
-                        </td>
-                        <td data-label="差分の種類">行内差分</td>
-                        <td data-label="説明">変更行の中で、具体的に変更された単語・文字範囲を示します。</td>
-                    </tr>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-del"></span>
-                        </td>
-                        <td data-label="差分の種類">削除・追加行</td>
-                        <td data-label="説明">一方にのみ存在する行（削除された行または追加された行）です。</td>
-                    </tr>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-moved-from"></span>
-                        </td>
-                        <td data-label="差分の種類">移動元</td>
-                        <td data-label="説明">別の場所に移動した行の元の位置です。</td>
-                    </tr>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-moved-to"></span>
-                        </td>
-                        <td data-label="差分の種類">移動先</td>
-                        <td data-label="説明">別の場所に移動した行の移動後の位置です。</td>
-                    </tr>
-                    <tr>
-                        <td data-label="色" class="text-center">
-                            <span class="color-box diff-separator"></span>
-                        </td>
-                        <td data-label="差分の種類">区切り行</td>
-                        <td data-label="説明">差分ブロック間の区切りを示します。</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="info-box">
-                <p><strong><i class="fas fa-info-circle"></i> ミニマップのマーカー色について</strong></p>
-                <p>ミニマップ（ロケーションペイン）のマーカーはすべて<span class="color-box" style="background-color:#F2D74E; border:1px solid #ccc;"></span>黄色で統一して表示します。位置の把握が目的のため、差分の種類による色分けは行いません。</p>
-            </div>
-            <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
-        </div>
-
-        <!-- キーボードショートカット -->
         <div class="section-box" id="keyboard-shortcuts">
             <h2><i class="fas fa-keyboard mr-0_5rem"></i>キーボードショートカット</h2>
             <p>効率的なレビューのためのショートカットキーです。</p>
@@ -784,7 +947,7 @@
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- FAQ -->
+        <!-- ★ NEW: FAQ セクション -->
         <div class="section-box" id="faq">
             <h2><i class="fas fa-question-circle mr-0_5rem"></i>よくある質問（FAQ）</h2>
             <p>該当する項目をクリックして展開してください。</p>
@@ -820,7 +983,8 @@
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <strong>A3:</strong> アイコン（Font Awesome）の読み込みにのみ必要です。アイコンが表示されなくても機能自体は動作しますので、オフライン環境でも利用可能です。
+                            <strong>A3:</strong> アイコン（Font
+                            Awesome）の読み込みにのみ必要です。アイコンが表示されなくても機能自体は動作しますので、オフライン環境でも利用可能です。
                         </div>
                     </div>
                 </div>
@@ -843,7 +1007,7 @@
                     <div class="accordion-content">
                         <div class="accordion-body">
                             <strong>A5:</strong>
-                            本ツールは<strong>PC環境での使用を前提</strong>としています。画面幅600px以下（スマートフォン）では機能が制限され、警告が表示されます。必ずPCでご利用ください。
+                            本ツールは<strong>PC環境での使用を前提</strong>としています。画面幅600px以下（スマートフォン）では機能が制限されます。必ずPCでご利用ください。
                         </div>
                     </div>
                 </div>
@@ -871,12 +1035,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- トラブルシューティング -->
         <div class="section-box" id="troubleshooting">
             <h2><i class="fas fa-tools mr-0_5rem"></i>トラブルシューティング</h2>
             <p>よくある問題と解決方法です。該当する項目をクリックして展開してください。</p>
@@ -913,26 +1075,12 @@
                             <strong>対処法：</strong>
                             <ol>
                                 <li>「更新」ボタンでリセットしてから再度読み込む</li>
-                                <li>ブラウザのキャッシュをクリア（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span>）</li>
+                                <li>ブラウザのキャッシュをクリア（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> +
+                                    <span class="kbd">R</span>）
+                                </li>
                                 <li>ブラウザの開発者ツール（F12）でエラーを確認</li>
                                 <li>別のブラウザで試す</li>
                             </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>ミニマップが正しく表示されない</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>考えられる原因と対処法：</strong>
-                            <ul>
-                                <li>ブラウザウィンドウのサイズを変えると自動的に再計算されます。ウィンドウのリサイズを試してください。</li>
-                                <li>「更新」ボタンでリセットして再読み込みしてください。</li>
-                                <li>上記で解決しない場合は、ページをリロード（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span>）してください。</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -945,7 +1093,9 @@
                         <div class="accordion-body">
                             <strong>対処法：</strong>
                             <ul>
-                                <li>ページを完全にリロード（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span>）</li>
+                                <li>ページを完全にリロード（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> +
+                                    <span class="kbd">R</span>）
+                                </li>
                                 <li>ブラウザのキャッシュをクリア</li>
                                 <li>最新バージョンのブラウザを使用しているか確認</li>
                             </ul>
@@ -969,6 +1119,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>ミニマップが消えない</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <strong>対処法：</strong>
+                            <ol>
+                                <li>「更新」ボタンをクリック</li>
+                                <li>上記で解決しない場合は、ページをリロード</li>
+                                <li>それでも解決しない場合は、ブラウザを再起動</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="info-box" style="margin-top: 20px;">
@@ -984,7 +1150,6 @@
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 動作環境 -->
         <div class="section-box" id="system-requirements">
             <h2><i class="fas fa-mobile-alt mr-0_5rem"></i>動作環境</h2>
 
@@ -1058,109 +1223,38 @@
                         <td data-label="項目">同時表示可能ファイル数</td>
                         <td data-label="制限">1ファイルのみ</td>
                     </tr>
-                    <tr>
-                        <td data-label="項目">対応画面サイズ</td>
-                        <td data-label="制限">幅601px以上（スマートフォン不可）</td>
-                    </tr>
                 </tbody>
             </table>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- アクセシビリティ -->
         <div class="section-box" id="accessibility">
             <h2><i class="fas fa-universal-access mr-0_5rem"></i>アクセシビリティ</h2>
             <p>本ビューアは、以下のアクセシビリティ基準を満たしています。</p>
 
             <h3><i class="fas fa-keyboard"></i> キーボード操作の完全サポート</h3>
-            <p>すべての機能がキーボードのみで操作可能です。マウスを使用しなくても、差分の閲覧からナビゲーションまで、全ての操作を実行できます。ミニマップのマーカーもTabキーとEnterキーで操作できます。</p>
+            <p>すべての機能がキーボードのみで操作可能です。マウスを使用しなくても、差分の閲覧からナビゲーションまで、全ての操作を実行できます。</p>
 
             <h3><i class="fas fa-eye"></i> スクリーンリーダー対応</h3>
-            <p>WAI-ARIA属性を適切に設定し、スクリーンリーダーを通じて差分情報が正確に伝わるよう配慮しています。ミニマップ（ロケーションペイン）の各ペインにはaria-labelが設定されています。</p>
+            <p>WAI-ARIA属性を適切に設定し、スクリーンリーダーを通じて差分情報が正確に伝わるよう配慮しています。</p>
 
             <h3><i class="fas fa-palette"></i> 視認性の確保</h3>
             <p>テキストと背景のコントラスト比を十分に確保し、色覚特性に関わらず差分を識別できるよう設計されています。</p>
 
             <h3><i class="fas fa-adjust"></i> アニメーション削減設定</h3>
-            <p>OSの「視覚効果を減らす」設定（prefers-reduced-motion）に対応しており、プログレスインジケーターなどのアニメーションが自動的に無効化されます。</p>
+            <p>OSの「視覚効果を減らす」設定に対応しており、アニメーションが自動的に無効化されます。</p>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <!-- 技術仕様 -->
         <div class="section-box" id="technical-specs">
             <h2><i class="fas fa-code mr-0_5rem"></i>技術仕様</h2>
 
-            <h3>モジュール構成</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>モジュール</th>
-                        <th>役割</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="モジュール">config.js</td>
-                        <td data-label="役割">アプリケーション全体の定数・差分色設定の一元管理</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">state.js</td>
-                        <td data-label="役割">アプリケーション状態管理・ログ出力</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">html-processor.js</td>
-                        <td data-label="役割">HTMLのサニタイゼーションとスタイル処理</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">diff-detector.js</td>
-                        <td data-label="役割">差分ブロックの検出とブロックマーカー生成</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">marker-manager.js</td>
-                        <td data-label="役割">行単位ミニマップマーカーの生成・管理（デバッグ専用：通常はBlockMarkerGeneratorを使用）</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">navigation.js</td>
-                        <td data-label="役割">差分ナビゲーションとインターフェースリセット</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">event-manager.js</td>
-                        <td data-label="役割">ドラッグ&ドロップ・各種UIイベント管理</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">file-handler.js</td>
-                        <td data-label="役割">ファイルの検証・読み込み・処理フロー制御</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">progress-indicator.js</td>
-                        <td data-label="役割">ファイル処理中のプログレス表示</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">ui.js</td>
-                        <td data-label="役割">UI要素の表示・非表示とメッセージ管理</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">utils.js</td>
-                        <td data-label="役割">汎用ユーティリティ・CSSクラス管理</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">error-handler.js / errors.js</td>
-                        <td data-label="役割">カスタムエラークラスと統一エラーハンドリング</td>
-                    </tr>
-                    <tr>
-                        <td data-label="モジュール">table-processor.js</td>
-                        <td data-label="役割">差分テーブルの解析と右端バーの追加処理</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <h3>使用技術</h3>
             <ul>
-                <li><strong>JavaScript：</strong> Vanilla JS ESモジュール（フレームワーク不使用）</li>
-                <li><strong>セキュリティ：</strong> DOMParser + CSP（Content Security Policy）によるXSS対策</li>
-                <li><strong>UI：</strong> Font Awesome 6.4.0（SRI付き）</li>
+                <li><strong>JavaScript：</strong> Vanilla JS（フレームワーク不使用）</li>
+                <li><strong>セキュリティ：</strong> DOMParser + CSP（Content Security Policy）</li>
+                <li><strong>UI：</strong> Font Awesome 6.4.0</li>
                 <li><strong>互換性：</strong> モダンブラウザ対応（ES6+）</li>
-                <li><strong>パフォーマンス：</strong> requestAnimationFrame によるマーカー配置最適化、FNV-1a ハッシュによるテーブルキャッシュ</li>
             </ul>
 
             <h3>データの取り扱い</h3>
@@ -1168,7 +1262,7 @@
                 <li><strong>データ送信：</strong> なし（すべてローカル処理）</li>
                 <li><strong>サーバー通信：</strong> Font Awesome読込のみ</li>
                 <li><strong>プライバシー：</strong> ファイルはブラウザ内でのみ処理</li>
-                <li><strong>ログ収集：</strong> なし（localhost / 127.0.0.1 または URL に <code>?debug=true</code> を付与した場合のみコンソール出力）</li>
+                <li><strong>ログ収集：</strong> なし</li>
             </ul>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
@@ -1184,11 +1278,13 @@
                     const content = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
+                    // 1つのアコーディオンを開いたときに他のアコーディオンを閉じる（オプション：複数開きたい場合はこの部分を削除）
                     accordionHeaders.forEach(h => {
                         h.classList.remove('active');
                         h.nextElementSibling.classList.remove('active');
                     });
 
+                    // クリックされた項目をトグル
                     if (!isActive) {
                         this.classList.add('active');
                         content.classList.add('active');
