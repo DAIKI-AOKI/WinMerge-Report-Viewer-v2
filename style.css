@@ -17,13 +17,35 @@ body {
 }
 
 /* ========================================
+   ファイル選択ボタン（カスタム）
+   ======================================== */
+#fileSelectButton {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f8f8f8;
+}
+
+#fileSelectButton:hover {
+    background: #e8e8e8;
+}
+
+/* ========================================
    WinMerge デフォルト配色（ミニマップマーカー用）
    ======================================== */
 :root {
-    --minimap-color-changed:  #FFD700; /* 差分行（変更） */
-    --minimap-color-word:     #FFD700; /* 行内差分（変更行扱い） */
-    --minimap-color-del:      #C0C0C0; /* 削除・追加行 */
-    --minimap-color-moved:    #FFA500; /* 移動ブロック */
+    --minimap-color-changed: #FFD700;
+    /* 差分行（変更） */
+    --minimap-color-word: #FFD700;
+    /* 行内差分（変更行扱い） */
+    --minimap-color-del: #C0C0C0;
+    /* 削除・追加行 */
+    --minimap-color-moved: #FFA500;
+    /* 移動ブロック */
 }
 
 /* ========================================
@@ -501,9 +523,12 @@ table.diff td {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-8px);
     }
@@ -549,6 +574,7 @@ table.diff td {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -591,12 +617,16 @@ table.diff td {
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
+
     25% {
         transform: translateX(-10px);
     }
+
     75% {
         transform: translateX(10px);
     }
@@ -635,7 +665,7 @@ table.diff td {
 }
 
 @media screen and (max-width: 600px) {
-    body > *:not(#mobileWarning) {
+    body>*:not(#mobileWarning) {
         display: none !important;
     }
 
@@ -689,6 +719,7 @@ table.diff td {
    アクセシビリティ - アニメーション削減設定
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
+
     .simple-progress-overlay,
     .simple-progress-container,
     .simple-progress-bar {
