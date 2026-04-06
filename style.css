@@ -17,24 +17,6 @@ body {
 }
 
 /* ========================================
-   ファイル選択ボタン（カスタム）
-   ======================================== */
-#fileSelectButton {
-    display: block;
-    margin: 0 auto 20px;
-    padding: 8px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #f8f8f8;
-}
-
-#fileSelectButton:hover {
-    background: #e8e8e8;
-}
-
-/* ========================================
    WinMerge デフォルト配色（ミニマップマーカー用）
    ======================================== */
 :root {
@@ -69,7 +51,7 @@ body {
 }
 
 #locationPaneLeft {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #bbb;
 }
 
 .minimap-header {
@@ -239,18 +221,35 @@ body {
    ファイル入力とドロップエリア
    ======================================== */
 #fileInput {
-    width: 300px;
-    display: block;
-    margin-inline: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: none;
 }
 
-#fileInput::file-selector-button {
-    font-size: 16px;
-    display: inline-block;
-    margin-right: 10px;
-    padding: 5px 10px;
+#fileInputLabel {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px auto;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    background-color: #f0f0f0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    user-select: none;
+}
+
+#fileInputLabel:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+#fileInputLabel:active {
+    background-color: #d0d0d0;
 }
 
 #dropArea {

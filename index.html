@@ -42,10 +42,15 @@
 
     <!-- 差分位置表示ペイン（左右2ミニマップ） -->
     <div id="locationPane" role="region" aria-label="差分位置表示ペイン">
-        <div id="locationPaneLeft" role="region" aria-label="旧バージョン ミニマップ" aria-describedby="locationPaneDesc">
+        <div id="locationPaneLeft"
+             role="region"
+             aria-label="旧バージョン ミニマップ"
+             aria-describedby="locationPaneDesc">
             <div class="minimap-header" aria-hidden="true">旧</div>
         </div>
-        <div id="locationPaneRight" role="region" aria-label="新バージョン ミニマップ">
+        <div id="locationPaneRight"
+             role="region"
+             aria-label="新バージョン ミニマップ">
             <div class="minimap-header" aria-hidden="true">新</div>
         </div>
         <p id="locationPaneDesc" style="display:none;">
@@ -99,13 +104,12 @@
             <p>HTMファイルをここにドラッグ&ドロップ<br>または下のボタンでファイルを選択<br>※ 最大ファイルサイズ: 10MB</p>
         </div>
 
-        <!-- input は非表示にしてカスタムボタンで操作する -->
-        <input accept=".htm,.html" id="fileInput" type="file" aria-describedby="fileInputDesc"
-            style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;">
-        <button id="fileSelectButton" type="button" aria-describedby="fileInputDesc"
-            onclick="document.getElementById('fileInput').click()">
-            ファイルを選択
-        </button>
+        <!-- ファイル入力 -->
+        <input accept=".htm,.html" id="fileInput" type="file" aria-describedby="fileInputDesc">
+        <label for="fileInput" id="fileInputLabel">
+            <i class="fas fa-arrow-up-from-bracket" aria-hidden="true"></i>
+            WinMergeレポート（.html / .htm）を選択
+        </label>
         <p id="fileInputDesc" class="accessibility-hidden">
             WinMergeで生成されたHTMLレポートを選択してください(最大10MBまで)。
         </p>
