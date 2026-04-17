@@ -567,7 +567,7 @@
 
             td {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 padding: 8px;
                 border: none;
                 border-bottom: 1px solid #eee;
@@ -704,24 +704,6 @@
                         トラブルシューティング
                     </a>
                 </div>
-                <div class="toc-item">
-                    <a href="#system-requirements">
-                        <i class="fas fa-mobile-alt"></i>
-                        動作環境
-                    </a>
-                </div>
-                <div class="toc-item">
-                    <a href="#accessibility">
-                        <i class="fas fa-universal-access"></i>
-                        アクセシビリティ
-                    </a>
-                </div>
-                <div class="toc-item">
-                    <a href="#technical-specs">
-                        <i class="fas fa-code"></i>
-                        技術仕様
-                    </a>
-                </div>
             </div>
         </div>
 
@@ -831,43 +813,29 @@
                     <tr>
                         <th class="text-center">色</th>
                         <th>差分の種類</th>
-                        <th>左ペイン（旧）</th>
-                        <th>右ペイン（新）</th>
+                        <th>表示ペイン</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="text-center"><span class="color-box minimap-changed"></span></td>
                         <td>変更行・行内差分</td>
-                        <td class="text-center">✅</td>
-                        <td class="text-center">✅</td>
+                        <td colspan="2">左ペイン・右ペインの両方に表示</td>
                     </tr>
                     <tr>
                         <td class="text-center"><span class="color-box minimap-del"></span></td>
-                        <td>削除・追加行・区切り行</td>
-                        <td class="text-center">✅</td>
-                        <td class="text-center">❌</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center"><span class="color-box minimap-moved"></span></td>
-                        <td>移動元</td>
-                        <td class="text-center">✅</td>
-                        <td class="text-center">❌</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center"><span class="color-box minimap-moved"></span></td>
-                        <td>移動先</td>
-                        <td class="text-center">❌</td>
-                        <td class="text-center">✅</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center"><span class="color-box minimap-del"></span></td>
-                        <td>区切り行</td>
-                        <td class="text-center">✅</td>
-                        <td class="text-center">✅</td>
+                        <td>削除行・追加行・区切り行</td>
+                        <td colspan="2">変更があった側のペインにのみ表示</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="info-box" style="margin-top: 10px; font-size: 0.95em;">
+                <strong>💡 オレンジ色のマーカーについて</strong><br>
+                WinMerge の「移動ブロック検出」を有効にすると、行の移動を示すオレンジ色のマーカーが表示されることがあります。
+                デフォルトでは無効のため、通常は表示されません。
+                有効にするには <strong>編集 → オプション → 比較 → 一般 →「移動ブロック検出を有効にする」</strong> にチェックを入れてください。
+            </div>
 
             <ul>
                 <li class="mb-0_5rem">
@@ -979,59 +947,12 @@
 
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <span>Q3. インターネット接続は必要ですか？</span>
+                        <span>Q3. データはどこに保存されますか？</span>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <strong>A3:</strong> アイコン（Font
-                            Awesome）の読み込みにのみ必要です。アイコンが表示されなくても機能自体は動作しますので、オフライン環境でも利用可能です。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>Q4. 複数のファイルを同時に開けますか？</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>A4:</strong> 現在のバージョンでは一度に1つのファイルのみ開けます。別のファイルを開く場合は「更新」ボタンでリセットしてください。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>Q5. スマートフォンで使えますか？</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>A5:</strong>
-                            本ツールは<strong>PC環境での使用を前提</strong>としています。画面幅600px以下（スマートフォン）では機能が制限されます。必ずPCでご利用ください。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>Q6. データはどこに保存されますか？</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>A6:</strong>
-                            <strong>すべての処理はブラウザ内で完結</strong>します。ファイルはサーバーにアップロードされず、あなたのPC内でのみ処理されます。プライバシーは完全に保護されています。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>Q7. ブラウザを閉じるとデータは消えますか？</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>A7:</strong>
-                            はい。ブラウザを閉じる、またはタブを閉じるとデータは消えます。<strong>ファイルは保存されません</strong>ので、必要に応じて元のHTMLファイルを保管してください。
+                            <strong>A3:</strong>
+                            <strong>すべての処理はブラウザ内で完結</strong>します。ファイルはサーバーにアップロードされず、あなたのPC内でのみ処理されます。ブラウザを閉じるとデータは消えます。
                         </div>
                     </div>
                 </div>
@@ -1078,27 +999,8 @@
                                 <li>ブラウザのキャッシュをクリア（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> +
                                     <span class="kbd">R</span>）
                                 </li>
-                                <li>ブラウザの開発者ツール（F12）でエラーを確認</li>
                                 <li>別のブラウザで試す</li>
                             </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>スタイルが崩れて表示される</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>対処法：</strong>
-                            <ul>
-                                <li>ページを完全にリロード（<span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> +
-                                    <span class="kbd">R</span>）
-                                </li>
-                                <li>ブラウザのキャッシュをクリア</li>
-                                <li>最新バージョンのブラウザを使用しているか確認</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1114,158 +1016,14 @@
                                 <li>ファイルサイズが大きい（5MB以上）場合は時間がかかります</li>
                                 <li>他のタブやアプリケーションを閉じてください</li>
                                 <li>ブラウザを再起動してください</li>
-                                <li>PCのメモリ使用率を確認してください</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <span>ミニマップが消えない</span>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>対処法：</strong>
-                            <ol>
-                                <li>「更新」ボタンをクリック</li>
-                                <li>上記で解決しない場合は、ページをリロード</li>
-                                <li>それでも解決しない場合は、ブラウザを再起動</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-box" style="margin-top: 20px;">
-                <p><strong><i class="fas fa-life-ring"></i> それでも解決しない場合</strong></p>
-                <p>問題が継続する場合は、以下の情報とともにサポートへご連絡ください：</p>
-                <ul>
-                    <li>使用しているブラウザとバージョン</li>
-                    <li>ファイルサイズ</li>
-                    <li>エラーメッセージ（あれば）</li>
-                    <li>発生した操作手順</li>
-                </ul>
             </div>
             <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
         </div>
 
-        <div class="section-box" id="system-requirements">
-            <h2><i class="fas fa-mobile-alt mr-0_5rem"></i>動作環境</h2>
-
-            <h3>対応ブラウザ</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ブラウザ</th>
-                        <th>バージョン</th>
-                        <th>備考</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="ブラウザ">Google Chrome</td>
-                        <td data-label="バージョン">90以上</td>
-                        <td data-label="備考"><strong>推奨</strong></td>
-                    </tr>
-                    <tr>
-                        <td data-label="ブラウザ">Microsoft Edge</td>
-                        <td data-label="バージョン">90以上</td>
-                        <td data-label="備考">推奨</td>
-                    </tr>
-                    <tr>
-                        <td data-label="ブラウザ">Firefox</td>
-                        <td data-label="バージョン">88以上</td>
-                        <td data-label="備考">対応</td>
-                    </tr>
-                    <tr>
-                        <td data-label="ブラウザ">Safari</td>
-                        <td data-label="バージョン">14以上</td>
-                        <td data-label="備考">macOS のみ</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="warning-box">
-                <strong><i class="fas fa-ban"></i> 非対応：</strong> Internet Explorer 11 は非対応です
-            </div>
-
-            <h3>推奨システム要件</h3>
-            <ul>
-                <li><strong>OS：</strong> Windows 10以上、macOS 10.15以上、Linux（最新版）</li>
-                <li><strong>メモリ：</strong> 4GB以上（8GB推奨）</li>
-                <li><strong>画面解像度：</strong> 1280×720以上（1920×1080推奨）</li>
-                <li><strong>ネットワーク：</strong> アイコン表示のみ必要（オフライン利用可能）</li>
-            </ul>
-
-            <h3>制限事項</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目</th>
-                        <th>制限</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="項目">最大ファイルサイズ</td>
-                        <td data-label="制限"><strong>10MB</strong></td>
-                    </tr>
-                    <tr>
-                        <td data-label="項目">対応ファイル形式</td>
-                        <td data-label="制限">.htm、.html</td>
-                    </tr>
-                    <tr>
-                        <td data-label="項目">対応レポート</td>
-                        <td data-label="制限">WinMerge HTML形式のみ</td>
-                    </tr>
-                    <tr>
-                        <td data-label="項目">同時表示可能ファイル数</td>
-                        <td data-label="制限">1ファイルのみ</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
-        </div>
-
-        <div class="section-box" id="accessibility">
-            <h2><i class="fas fa-universal-access mr-0_5rem"></i>アクセシビリティ</h2>
-            <p>本ビューアは、以下のアクセシビリティ基準を満たしています。</p>
-
-            <h3><i class="fas fa-keyboard"></i> キーボード操作の完全サポート</h3>
-            <p>すべての機能がキーボードのみで操作可能です。マウスを使用しなくても、差分の閲覧からナビゲーションまで、全ての操作を実行できます。</p>
-
-            <h3><i class="fas fa-eye"></i> スクリーンリーダー対応</h3>
-            <p>WAI-ARIA属性を適切に設定し、スクリーンリーダーを通じて差分情報が正確に伝わるよう配慮しています。</p>
-
-            <h3><i class="fas fa-palette"></i> 視認性の確保</h3>
-            <p>テキストと背景のコントラスト比を十分に確保し、色覚特性に関わらず差分を識別できるよう設計されています。</p>
-
-            <h3><i class="fas fa-adjust"></i> アニメーション削減設定</h3>
-            <p>OSの「視覚効果を減らす」設定に対応しており、アニメーションが自動的に無効化されます。</p>
-            <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
-        </div>
-
-        <div class="section-box" id="technical-specs">
-            <h2><i class="fas fa-code mr-0_5rem"></i>技術仕様</h2>
-
-            <h3>使用技術</h3>
-            <ul>
-                <li><strong>JavaScript：</strong> Vanilla JS（フレームワーク不使用）</li>
-                <li><strong>セキュリティ：</strong> DOMParser + CSP（Content Security Policy）</li>
-                <li><strong>UI：</strong> Font Awesome 6.4.0</li>
-                <li><strong>互換性：</strong> モダンブラウザ対応（ES6+）</li>
-            </ul>
-
-            <h3>データの取り扱い</h3>
-            <ul>
-                <li><strong>データ送信：</strong> なし（すべてローカル処理）</li>
-                <li><strong>サーバー通信：</strong> Font Awesome読込のみ</li>
-                <li><strong>プライバシー：</strong> ファイルはブラウザ内でのみ処理</li>
-                <li><strong>ログ収集：</strong> なし</li>
-            </ul>
-            <div class="back-to-top"><a href="#top"><i class="fas fa-chevron-up"></i>トップへ戻る</a></div>
-        </div>
     </div>
 
     <script>
